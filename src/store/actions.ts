@@ -44,6 +44,6 @@ export const actionIsSwapForegroundBackground = (action: Action): action is Acti
 	action.type === 'SWAP_FOREGROUND_BACKGROUND'
 );
 
-export const SwapForegroundBackground = (): ActionSwapForegroundBackground => ({
+export const swapForegroundBackground = (): ActionSwapForegroundBackground => ({
 	type: 'SWAP_FOREGROUND_BACKGROUND',
 });
