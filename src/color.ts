@@ -7,7 +7,7 @@
  * @returns Relative luminance (0-1)
  * @see https://www.w3.org/TR/WCAG20/#relativeluminancedef
  */
-export const calculateRelativeLuminance = (r: number, g: number, b: number) => (
+export const calculateRelativeLuminance = ([r, g, b]: [number, number, number]) => (
 	0.2126 * (r <= 0.03928 ? r / 12.92 : ((r + 0.055) / 1.055) ** 2.4) +
 	0.7152 * (g <= 0.03928 ? g / 12.92 : ((g + 0.055) / 1.055) ** 2.4) +
 	0.0722 * (b <= 0.03928 ? b / 12.92 : ((b + 0.055) / 1.055) ** 2.4)
