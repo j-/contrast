@@ -12,30 +12,38 @@ export default class DefineColors extends React.Component<Props> {
 	render () {
 		return (
 			<div>
-				<label htmlFor="define-foreground">Foreground color</label><br />
-				<input
-					id="define-foreground"
-					type="text"
-					value={this.props.foreground}
-					onChange={this.handleChangeForeground}
-				/>
-
-				<br />
-
-				<label htmlFor="define-background">Background color</label><br />
-				<input
-					id="define-background"
-					type="text"
-					value={this.props.background}
-					onChange={this.handleChangeBackground}
-				/>
-
-				<br />
-
+				<label
+					htmlFor="define-foreground"
+					className="pt-label"
+				>
+					Foreground color
+					<input
+						id="define-foreground"
+						className="pt-input"
+						type="text"
+						value={this.props.foreground}
+						onChange={this.handleChangeForeground}
+					/>
+				</label>
+				<label
+					htmlFor="define-background"
+					className="pt-label"
+				>
+					Background color
+					<input
+						id="define-background"
+						className="pt-input"
+						type="text"
+						value={this.props.background}
+						onChange={this.handleChangeBackground}
+					/>
+				</label>
 				<button
+					className="pt-button"
 					type="button"
 					onClick={this.props.swapForegroundBackground}
 				>
+					<span className="pt-icon-standard pt-icon-swap-vertical" />
 					Swap
 				</button>
 			</div>
