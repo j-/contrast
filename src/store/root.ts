@@ -16,7 +16,7 @@ const DEFAULT_STATE = {
 	backgroundColor: 'white',
 };
 
-const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action: Action): ReducerState => {
+const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action: Action) => {
 	if (actionIsSetForeground(action)) {
 		return {
 			...state,
