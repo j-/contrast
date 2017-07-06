@@ -43,3 +43,11 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action: Action) =
 };
 
 export default reducer;
+
+export const getForeground = (state: ReducerState) => (
+	state.foregroundColor
+);
+
+export const getBackground = (state: ReducerState) => (
+	state.backgroundColor
+);
