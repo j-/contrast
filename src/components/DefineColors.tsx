@@ -11,7 +11,7 @@ export interface Props {
 export default class DefineColors extends React.Component<Props> {
 	render () {
 		return (
-			<div>
+			<div className="pt-card">
 				<label
 					htmlFor="define-foreground"
 					className="pt-label"

@@ -7,9 +7,7 @@ const App = () => (
 	<div>
 		<DefineColors />
 		<Contrast />
-		<div style={{ width: 300, height: 50 }}>
-			<Preview />
-		</div>
+		<Preview />
 	</div>
 );
 

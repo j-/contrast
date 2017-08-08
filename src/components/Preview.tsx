@@ -13,7 +13,7 @@ export default class Preview extends React.Component<Props> {
 			color: this.props.foreground,
 		};
 		return (
-			<div style={style}>
+			<div className="pt-card" style={style}>
 				<PreviewLine points={18} weight="normal" />
 				<PreviewLine points={14} weight="bold" />
 				<PreviewLine points={14} weight="normal" />
