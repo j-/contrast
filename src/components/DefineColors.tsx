@@ -19,7 +19,7 @@ export default class DefineColors extends React.Component<Props> {
 					Foreground color
 					<input
 						id="define-foreground"
-						className="pt-input"
+						className="pt-input pt-fill"
 						type="text"
 						value={this.props.foreground}
 						onChange={this.handleChangeForeground}
@@ -32,7 +32,7 @@ export default class DefineColors extends React.Component<Props> {
 					Background color
 					<input
 						id="define-background"
-						className="pt-input"
+						className="pt-input pt-fill"
 						type="text"
 						value={this.props.background}
 						onChange={this.handleChangeBackground}
