@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PreviewLine from './PreviewLine';
+import { isColorValid } from '../parse';
 
 export interface Props {
 	foreground: string;
@@ -8,9 +9,10 @@ export interface Props {
 
 export default class Preview extends React.Component<Props> {
 	render () {
+		const { foreground, background } = this.props;
 		const style = {
-			backgroundColor: this.props.background,
-			color: this.props.foreground,
+			backgroundColor: isColorValid(background) ? background : 'inherit',
+			color: isColorValid(foreground) ? foreground : 'inherit',
 		};
 		return (
 			<div className="pt-card" style={style}>
