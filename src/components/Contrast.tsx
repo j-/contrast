@@ -7,16 +7,18 @@ export interface Props {
 	background: string;
 }
 
+const Unknown = () => <div><em>Invalid colors</em></div>;
+
 export default class Contrast extends React.Component<Props> {
 	render () {
 		const { foreground, background } = this.props;
 		const parsedForeground = parseColor(foreground, background);
 		if (parsedForeground === null) {
-			return null;
+			return <Unknown />;
 		}
 		const parsedBackground = parseColor(background);
 		if (parsedBackground === null) {
-			return null;
+			return <Unknown />;
 		}
 		const contrast = calculateContrastRatio(
 			calculateRelativeLuminance(parsedForeground),
