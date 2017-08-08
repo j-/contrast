@@ -11,10 +11,17 @@ export default class Contrast extends React.Component<Props> {
 	render () {
 		const { foreground, background } = this.props;
 		const parsedForeground = parseColor(foreground);
+		if (parsedForeground === null) {
+			return null;
+		}
 		const parsedBackground = parseColor(background);
-		const luminanceForeground = calculateRelativeLuminance(parsedForeground);
-		const luminanceBackground = calculateRelativeLuminance(parsedBackground);
-		const contrast = calculateContrastRatio(luminanceForeground, luminanceBackground);
+		if (parsedBackground === null) {
+			return null;
+		}
+		const contrast = calculateContrastRatio(
+			calculateRelativeLuminance(parsedForeground),
+			calculateRelativeLuminance(parsedBackground)
+		);
 		return <div>{Math.ceil(contrast)}:1</div>;
 	}
 }
