@@ -10,7 +10,7 @@ export interface Props {
 export default class Contrast extends React.Component<Props> {
 	render () {
 		const { foreground, background } = this.props;
-		const parsedForeground = parseColor(foreground);
+		const parsedForeground = parseColor(foreground, background);
 		if (parsedForeground === null) {
 			return null;
 		}

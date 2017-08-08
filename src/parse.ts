@@ -9,13 +9,23 @@ export const isColorValid = (color: string): boolean => {
 	return div.style.backgroundColor !== '';
 };
 
-export const parseColor = (color: string): [number, number, number] | null => {
+const clear = (ctx: CanvasRenderingContext2D) => {
+	ctx.clearRect(0, 0, 1, 1);
+};
+
+const fill = (ctx: CanvasRenderingContext2D, style: string) => {
+	ctx.fillStyle = style;
+	ctx.fillRect(0, 0, 1, 1);
+};
+
+export const parseColor = (color: string, background: string = 'transparent'): [number, number, number] | null => {
 	if (!isColorValid(color)) {
 		return null;
 	}
-	ctx.clearRect(0, 0, 1, 1);
-	ctx.fillStyle = color;
-	ctx.fillRect(0, 0, 1, 1);
+	clear(ctx);
+	fill(ctx, 'white');
+	fill(ctx, background);
+	fill(ctx, color);
 	const { data } = ctx.getImageData(0, 0, 1, 1);
 	return [
 		data[0] / 0x100,
