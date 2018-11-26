@@ -23,5 +23,5 @@ const mapDispatchToProps: MapDispatchToProps<{}, {}> = ({
 
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps
+	mapDispatchToProps,
 )(Preview);

@@ -37,5 +37,5 @@ const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = ({
 
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps
+	mapDispatchToProps,
 )(DefineColors);
