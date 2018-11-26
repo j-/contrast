@@ -19,13 +19,13 @@ const DEFAULT_STATE: RootReducerState = {
 	backgroundColor: 'white',
 };
 
-type ActionTypes = (
+type ActionType = (
 	ActionSetForeground |
 	ActionSetBackground |
 	ActionSwapForegroundBackground
 );
 
-const reducer: Reducer<RootReducerState, ActionTypes> = (state = DEFAULT_STATE, action) => {
+const reducer: Reducer<RootReducerState, ActionType> = (state = DEFAULT_STATE, action) => {
 	if (actionIsSetForeground(action)) {
 		return {
 			...state,
