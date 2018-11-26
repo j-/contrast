@@ -1,8 +1,11 @@
-import { Action, Reducer } from 'redux';
+import { Reducer } from 'redux';
 
 import {
+	ActionSetForeground,
 	actionIsSetForeground,
+	ActionSetBackground,
 	actionIsSetBackground,
+	ActionSwapForegroundBackground,
 	actionIsSwapForegroundBackground,
 } from './actions';
 
@@ -16,7 +19,13 @@ const DEFAULT_STATE = {
 	backgroundColor: 'white',
 };
 
-const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action: Action) => {
+type ActionTypes = (
+	ActionSetForeground |
+	ActionSetBackground |
+	ActionSwapForegroundBackground
+);
+
+const reducer: Reducer<ReducerState, ActionTypes> = (state = DEFAULT_STATE, action) => {
 	if (actionIsSetForeground(action)) {
 		return {
 			...state,
