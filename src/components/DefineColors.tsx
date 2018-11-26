@@ -8,7 +8,7 @@ export interface Props {
 	swapForegroundBackground: () => void;
 }
 
-export default class DefineColors extends React.Component<Props> {
+export default class DefineColors extends React.PureComponent<Props> {
 	render () {
 		return (
 			<div className="pt-card">
