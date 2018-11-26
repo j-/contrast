@@ -7,6 +7,13 @@ import {
 } from '../color';
 
 import {
+	meetsAALarge,
+	meetsAA,
+	meetsAAALarge,
+	meetsAAA,
+} from '../contrast';
+
+import {
 	ActionSetForeground,
 	actionIsSetForeground,
 	ActionSetBackground,
@@ -134,4 +141,20 @@ export const getContrastRatio = (state: RootReducerState) => (
 	state.contrastRatio === null ? null : (
 		Math.floor(state.contrastRatio * 10) / 10 + ':1'
 	)
+);
+
+export const contrastMeetsAALarge = (state: RootReducerState) => (
+	state.contrastRatio === null ? null : meetsAALarge(state.contrastRatio)
+);
+
+export const contrastMeetsAA = (state: RootReducerState) => (
+	state.contrastRatio === null ? null : meetsAA(state.contrastRatio)
+);
+
+export const contrastMeetsAAALarge = (state: RootReducerState) => (
+	state.contrastRatio === null ? null : meetsAAALarge(state.contrastRatio)
+);
+
+export const contrastMeetsAAA = (state: RootReducerState) => (
+	state.contrastRatio === null ? null : meetsAAA(state.contrastRatio)
 );
