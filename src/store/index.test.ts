@@ -1,23 +1,16 @@
 import rootReducer from '.';
 
-import {
-	ActionSetForeground,
-	ActionSetBackground,
-	ActionSwapForegroundBackground,
-} from './actions';
-
 it('Can set foreground color', () => {
 	const state = {
 		foregroundColor: 'blue',
 		backgroundColor: 'white',
 	};
-	const action: ActionSetForeground = {
+	const result = rootReducer(state, {
 		type: 'SetForeground',
 		data: {
 			color: 'red',
 		},
-	};
-	const result = rootReducer(state, action);
+	});
 	expect(result).toEqual({
 		foregroundColor: 'red',
 		backgroundColor: 'white',
@@ -29,13 +22,12 @@ it('Can set background color', () => {
 		foregroundColor: 'blue',
 		backgroundColor: 'white',
 	};
-	const action: ActionSetBackground = {
+	const result = rootReducer(state, {
 		type: 'SetBackground',
 		data: {
 			color: 'black',
 		},
-	};
-	const result = rootReducer(state, action);
+	});
 	expect(result).toEqual({
 		foregroundColor: 'blue',
 		backgroundColor: 'black',
@@ -47,10 +39,9 @@ it('Can switch foreground and background', () => {
 		foregroundColor: 'black',
 		backgroundColor: 'white',
 	};
-	const action: ActionSwapForegroundBackground = {
+	const result = rootReducer(state, {
 		type: 'SwapForegroundBackground',
-	};
-	const result = rootReducer(state, action);
+	});
 	expect(result).toEqual({
 		foregroundColor: 'white',
 		backgroundColor: 'black',
