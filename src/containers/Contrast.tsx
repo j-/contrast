@@ -7,7 +7,7 @@ import {
 } from '../store';
 
 interface StateProps {
-	contrastRatio: number | null;
+	contrastRatio: string | null;
 }
 
 const mapStateToProps: MapStateToProps<StateProps, {}, RootReducerState> = (state) => ({

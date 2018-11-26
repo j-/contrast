@@ -126,6 +126,12 @@ export const getBackgroundLuminance = (state: RootReducerState) => (
 	state.backgroundLuminance
 );
 
-export const getContrastRatio = (state: RootReducerState) => (
+export const getContrastRatioValue = (state: RootReducerState) => (
 	state.contrastRatio
+);
+
+export const getContrastRatio = (state: RootReducerState) => (
+	state.contrastRatio === null ? null : (
+		Math.floor(state.contrastRatio * 10) / 10 + ':1'
+	)
 );
