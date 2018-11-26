@@ -18,6 +18,10 @@ const fill = (ctx: CanvasRenderingContext2D, style: string) => {
 	ctx.fillRect(0, 0, 1, 1);
 };
 
+const getImageData = (ctx: CanvasRenderingContext2D) => (
+	ctx.getImageData(0, 0, 1, 1)
+);
+
 export const parseColor = (color: string, background: string = 'transparent'): [number, number, number] | null => {
 	if (!isColorValid(color)) {
 		return null;
@@ -26,7 +30,7 @@ export const parseColor = (color: string, background: string = 'transparent'): [
 	fill(ctx, 'white');
 	fill(ctx, background);
 	fill(ctx, color);
-	const { data } = ctx.getImageData(0, 0, 1, 1);
+	const { data } = getImageData(ctx);
 	return [
 		data[0] / 0x100,
 		data[1] / 0x100,
