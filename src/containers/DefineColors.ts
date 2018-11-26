@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import DefineColors from '../components/DefineColors';
 
 import {
-	ReducerState,
+	RootReducerState,
 	getForeground,
 	getBackground,
 } from '../store';
@@ -28,7 +28,7 @@ interface OwnProps {
 
 }
 
-const mapStateToProps = (state: ReducerState) => ({
+const mapStateToProps = (state: RootReducerState) => ({
 	foreground: getForeground(state),
 	background: getBackground(state),
 });

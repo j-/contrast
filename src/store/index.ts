@@ -9,7 +9,7 @@ import {
 	actionIsSwapForegroundBackground,
 } from './actions';
 
-export interface ReducerState {
+export interface RootReducerState {
 	foregroundColor: string;
 	backgroundColor: string;
 }
@@ -25,7 +25,7 @@ type ActionTypes = (
 	ActionSwapForegroundBackground
 );
 
-const reducer: Reducer<ReducerState, ActionTypes> = (state = DEFAULT_STATE, action) => {
+const reducer: Reducer<RootReducerState, ActionTypes> = (state = DEFAULT_STATE, action) => {
 	if (actionIsSetForeground(action)) {
 		return {
 			...state,
@@ -53,10 +53,10 @@ const reducer: Reducer<ReducerState, ActionTypes> = (state = DEFAULT_STATE, acti
 
 export default reducer;
 
-export const getForeground = (state: ReducerState) => (
+export const getForeground = (state: RootReducerState) => (
 	state.foregroundColor
 );
 
-export const getBackground = (state: ReducerState) => (
+export const getBackground = (state: RootReducerState) => (
 	state.backgroundColor
 );
