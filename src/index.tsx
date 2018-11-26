@@ -4,16 +4,16 @@ import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createStore from './store/create';
-import { Provider } from 'react-redux';
+import { Provider as StoreProvider } from 'react-redux';
 import '@blueprintjs/core/dist/blueprint.css';
 import './index.css';
 
 const store = createStore(composeWithDevTools());
 
 ReactDOM.render(
-	<Provider store={store}>
+	<StoreProvider store={store}>
 		<App />
-	</Provider>,
+	</StoreProvider>,
 	document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
