@@ -5,7 +5,7 @@ import {
 	ReducerState,
 	getForeground,
 	getBackground,
-} from '../store/root';
+} from '../store';
 
 interface StateProps {
 	foreground: string;

@@ -1,4 +1,4 @@
-import rootReducer from './root';
+import rootReducer from '.';
 
 it('Can set foreground color', () => {
 	const state = {
