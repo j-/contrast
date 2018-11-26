@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { connect, MapStateToProps, MapDispatchToProps } from 'react-redux';
 import DefineColors from '../components/DefineColors';
 
 import {
@@ -24,22 +24,18 @@ interface DispatchProps {
 	swapForegroundBackground: () => void;
 }
 
-interface OwnProps {
-
-}
-
-const mapStateToProps = (state: RootReducerState) => ({
+const mapStateToProps: MapStateToProps<StateProps, {}, RootReducerState> = (state) => ({
 	foreground: getForeground(state),
 	background: getBackground(state),
 });
 
-const mapDispatchToProps = ({
+const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = ({
 	setForeground,
 	setBackground,
 	swapForegroundBackground,
 });
 
-export default connect<StateProps, DispatchProps, OwnProps>(
+export default connect(
 	mapStateToProps,
 	mapDispatchToProps
 )(DefineColors);

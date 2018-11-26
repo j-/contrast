@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { connect, MapStateToProps, MapDispatchToProps } from 'react-redux';
 import Preview from '../components/Preview';
 
 import {
@@ -12,24 +12,16 @@ interface StateProps {
 	background: string;
 }
 
-interface DispatchProps {
-
-}
-
-interface OwnProps {
-
-}
-
-const mapStateToProps = (state: RootReducerState) => ({
+const mapStateToProps: MapStateToProps<StateProps, {}, RootReducerState> = (state) => ({
 	foreground: getForeground(state),
 	background: getBackground(state),
 });
 
-const mapDispatchToProps = ({
+const mapDispatchToProps: MapDispatchToProps<{}, {}> = ({
 
 });
 
-export default connect<StateProps, DispatchProps, OwnProps>(
+export default connect(
 	mapStateToProps,
 	mapDispatchToProps
 )(Preview);
