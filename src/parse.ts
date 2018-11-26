@@ -5,6 +5,12 @@ canvas.width = 1;
 canvas.height = 1;
 const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
+/**
+ * Attempts to apply the color to a `div` element as a background color. Will
+ * return `true` if the color is valid and applied correctly. Returns `false`
+ * otherwise.
+ * @param color Input color string
+ */
 export const isColorValid = (color: string): boolean => {
 	const div = document.createElement('div');
 	div.style.backgroundColor = color;
