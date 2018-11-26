@@ -6,17 +6,16 @@ export interface Props {
 	weight: 'normal' | 'bold';
 }
 
-export default class PreviewLine extends React.Component<Props> {
-	render () {
-		const { points, weight } = this.props;
-		const style = {
-			fontSize: points + 'pt',
-			fontWeight: weight,
-		};
-		return (
-			<p className="PreviewLine" style={style}>
-				{`${points}pt text ${weight} weight`}
-			</p>
-		);
-	}
-}
+const PreviewLine: React.StatelessComponent<Props> = ({ points, weight }) => {
+	const style = {
+		fontSize: points + 'pt',
+		fontWeight: weight,
+	};
+	return (
+		<p className="PreviewLine" style={style}>
+			{`${points}pt text ${weight} weight`}
+		</p>
+	);
+};
+
+export default PreviewLine;
