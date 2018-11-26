@@ -22,6 +22,13 @@ const getImageData = (ctx: CanvasRenderingContext2D) => (
 	ctx.getImageData(0, 0, 1, 1)
 );
 
+/**
+ * Parses a CSS color string. Returns the RGB color components as an array of
+ * numbers from 0-1. Input color can have alpha channel. Will be applied on top
+ * of the provided background and both will be applied on a white background.
+ * @param color Color to parse
+ * @param background Optional background color
+ */
 export const parseColor = (color: string, background: string = 'transparent'): [number, number, number] | null => {
 	if (!isColorValid(color)) {
 		return null;
