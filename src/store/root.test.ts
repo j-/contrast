@@ -7,7 +7,7 @@ it('Can set foreground color', () => {
 	};
 	const action = {
 		type: 'SET_FOREGROUND',
-		payload: {
+		data: {
 			color: 'red',
 		},
 	};
@@ -25,7 +25,7 @@ it('Can set background color', () => {
 	};
 	const action = {
 		type: 'SET_BACKGROUND',
-		payload: {
+		data: {
 			color: 'black',
 		},
 	};

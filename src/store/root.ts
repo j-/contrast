@@ -20,14 +20,14 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action: Action) =
 	if (actionIsSetForeground(action)) {
 		return {
 			...state,
-			foregroundColor: action.payload.color,
+			foregroundColor: action.data.color,
 		};
 	}
 
 	if (actionIsSetBackground(action)) {
 		return {
 			...state,
-			backgroundColor: action.payload.color,
+			backgroundColor: action.data.color,
 		};
 	}
 

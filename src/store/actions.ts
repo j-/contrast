@@ -2,7 +2,7 @@ import { Action } from 'redux';
 
 export interface ActionSetForeground extends Action {
 	type: 'SET_FOREGROUND';
-	payload: {
+	data: {
 		color: string;
 	};
 }
@@ -13,14 +13,14 @@ export const actionIsSetForeground = (action: Action): action is ActionSetForegr
 
 export const setForeground = (color: string): ActionSetForeground => ({
 	type: 'SET_FOREGROUND',
-	payload: {
+	data: {
 		color,
 	},
 });
 
 export interface ActionSetBackground extends Action {
 	type: 'SET_BACKGROUND';
-	payload: {
+	data: {
 		color: string;
 	};
 }
@@ -31,7 +31,7 @@ export const actionIsSetBackground = (action: Action): action is ActionSetBackgr
 
 export const setBackground = (color: string): ActionSetBackground => ({
 	type: 'SET_BACKGROUND',
-	payload: {
+	data: {
 		color,
 	},
 });
