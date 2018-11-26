@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DefineColors from '../containers/DefineColors';
+import DefineColors from './DefineColors';
 import Contrast from '../containers/Contrast';
 import Preview from '../containers/Preview';
 

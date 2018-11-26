@@ -1,59 +1,39 @@
 import * as React from 'react';
+import ForegroundInput from '../containers/ForegroundInput';
+import BackgroundInput from '../containers/BackgroundInput';
+import SwapButton from '../containers/SwapButton';
 
-export interface Props {
-	foreground: string;
-	background: string;
-	setForeground: (foreground: string) => void;
-	setBackground: (background: string) => void;
-	swapForegroundBackground: () => void;
-}
-
-export default class DefineColors extends React.PureComponent<Props> {
-	render () {
-		return (
-			<div className="DefineColors card card-body">
-				<div className="row">
-					<div className="form-group col">
-						<label htmlFor="DefineColors-define-foreground">
-							Foreground color
-						</label>
-						<input
-							id="DefineColors-define-foreground"
-							className="form-control"
-							type="text"
-							value={this.props.foreground}
-							onChange={this.handleChangeForeground}
-						/>
-					</div>
-					<div className="form-group col">
-						<label htmlFor="DefineColors-define-background">
-							Background color
-						</label>
-						<input
-							id="DefineColors-define-background"
-							className="form-control"
-							type="text"
-							value={this.props.background}
-							onChange={this.handleChangeBackground}
-						/>
-					</div>
-				</div>
-				<button
-					className="btn btn-light col-2"
-					type="button"
-					onClick={this.props.swapForegroundBackground}
-				>
-					Swap
-				</button>
+const DefineColors: React.StatelessComponent = () => (
+	<div className="DefineColors card card-body">
+		<div className="row">
+			<div className="form-group col">
+				<label htmlFor="DefineColors-define-foreground">
+					Foreground color
+				</label>
+				<ForegroundInput
+					id="DefineColors-define-foreground"
+					className="form-control"
+					type="text"
+				/>
 			</div>
-		);
-	}
+			<div className="form-group col">
+				<label htmlFor="DefineColors-define-background">
+					Background color
+				</label>
+				<BackgroundInput
+					id="DefineColors-define-background"
+					className="form-control"
+					type="text"
+				/>
+			</div>
+		</div>
+		<SwapButton
+			className="btn btn-light col-2"
+			type="button"
+		>
+			Swap
+		</SwapButton>
+	</div>
+);
 
-	private handleChangeForeground = (e: React.ChangeEvent<HTMLInputElement>) => {
-		this.props.setForeground(e.currentTarget.value);
-	}
-
-	private handleChangeBackground = (e: React.ChangeEvent<HTMLInputElement>) => {
-		this.props.setBackground(e.currentTarget.value);
-	}
-}
+export default DefineColors;
