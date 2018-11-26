@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 
-export interface ActionSetForeground {
+export interface ActionSetForeground extends Action {
 	type: 'SET_FOREGROUND';
 	payload: {
 		color: string;
@@ -18,7 +18,7 @@ export const setForeground = (color: string): ActionSetForeground => ({
 	},
 });
 
-export interface ActionSetBackground {
+export interface ActionSetBackground extends Action {
 	type: 'SET_BACKGROUND';
 	payload: {
 		color: string;
@@ -36,7 +36,7 @@ export const setBackground = (color: string): ActionSetBackground => ({
 	},
 });
 
-export interface ActionSwapForegroundBackground {
+export interface ActionSwapForegroundBackground extends Action {
 	type: 'SWAP_FOREGROUND_BACKGROUND';
 }
 
