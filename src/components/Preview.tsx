@@ -13,7 +13,7 @@ const Preview: React.StatelessComponent<Props> = ({ foreground, background }) =>
 		color: isColorValid(foreground) ? foreground : 'inherit',
 	};
 	return (
-		<div className="pt-card" style={style}>
+		<div className="card card-body" style={style}>
 			<PreviewLine points={18} weight="normal" />
 			<PreviewLine points={14} weight="bold" />
 			<PreviewLine points={14} weight="normal" />

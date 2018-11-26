@@ -5,7 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createStore from './store/create';
 import { Provider as StoreProvider } from 'react-redux';
-import '@blueprintjs/core/dist/blueprint.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 const store = createStore(composeWithDevTools());

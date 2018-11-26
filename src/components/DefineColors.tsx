@@ -11,39 +11,38 @@ export interface Props {
 export default class DefineColors extends React.PureComponent<Props> {
 	render () {
 		return (
-			<div className="pt-card">
-				<label
-					htmlFor="define-foreground"
-					className="pt-label"
-				>
-					Foreground color
-					<input
-						id="define-foreground"
-						className="pt-input pt-fill"
-						type="text"
-						value={this.props.foreground}
-						onChange={this.handleChangeForeground}
-					/>
-				</label>
-				<label
-					htmlFor="define-background"
-					className="pt-label"
-				>
-					Background color
-					<input
-						id="define-background"
-						className="pt-input pt-fill"
-						type="text"
-						value={this.props.background}
-						onChange={this.handleChangeBackground}
-					/>
-				</label>
+			<div className="DefineColors card card-body">
+				<div className="row">
+					<div className="form-group col">
+						<label htmlFor="DefineColors-define-foreground">
+							Foreground color
+						</label>
+						<input
+							id="DefineColors-define-foreground"
+							className="form-control"
+							type="text"
+							value={this.props.foreground}
+							onChange={this.handleChangeForeground}
+						/>
+					</div>
+					<div className="form-group col">
+						<label htmlFor="DefineColors-define-background">
+							Background color
+						</label>
+						<input
+							id="DefineColors-define-background"
+							className="form-control"
+							type="text"
+							value={this.props.background}
+							onChange={this.handleChangeBackground}
+						/>
+					</div>
+				</div>
 				<button
-					className="pt-button"
+					className="btn btn-light col-2"
 					type="button"
 					onClick={this.props.swapForegroundBackground}
 				>
-					<span className="pt-icon-standard pt-icon-swap-vertical" />
 					Swap
 				</button>
 			</div>
