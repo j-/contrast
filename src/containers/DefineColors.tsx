@@ -3,8 +3,8 @@ import DefineColors from '../components/DefineColors';
 
 import {
 	RootReducerState,
-	getForeground,
-	getBackground,
+	getForegroundInputValue,
+	getBackgroundInputValue,
 } from '../store';
 
 import {
@@ -25,8 +25,8 @@ interface DispatchProps {
 }
 
 const mapStateToProps: MapStateToProps<StateProps, {}, RootReducerState> = (state) => ({
-	foreground: getForeground(state),
-	background: getBackground(state),
+	foreground: getForegroundInputValue(state),
+	background: getBackgroundInputValue(state),
 });
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = ({

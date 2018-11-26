@@ -3,18 +3,15 @@ import Contrast from '../components/Contrast';
 
 import {
 	RootReducerState,
-	getForeground,
-	getBackground,
+	getContrastRatio,
 } from '../store';
 
 interface StateProps {
-	foreground: string;
-	background: string;
+	contrastRatio: number | null;
 }
 
 const mapStateToProps: MapStateToProps<StateProps, {}, RootReducerState> = (state) => ({
-	foreground: getForeground(state),
-	background: getBackground(state),
+	contrastRatio: getContrastRatio(state),
 });
 
 const mapDispatchToProps: MapDispatchToProps<{}, {}> = ({

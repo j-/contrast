@@ -3,8 +3,8 @@ import Preview from '../components/Preview';
 
 import {
 	RootReducerState,
-	getForeground,
-	getBackground,
+	getForegroundInputValue,
+	getBackgroundInputValue,
 } from '../store';
 
 interface StateProps {
@@ -13,8 +13,8 @@ interface StateProps {
 }
 
 const mapStateToProps: MapStateToProps<StateProps, {}, RootReducerState> = (state) => ({
-	foreground: getForeground(state),
-	background: getBackground(state),
+	foreground: getForegroundInputValue(state),
+	background: getBackgroundInputValue(state),
 });
 
 const mapDispatchToProps: MapDispatchToProps<{}, {}> = ({
