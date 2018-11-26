@@ -12,7 +12,7 @@ it('Can set foreground color', () => {
 		backgroundColor: 'white',
 	};
 	const action: ActionSetForeground = {
-		type: 'SET_FOREGROUND',
+		type: 'SetForeground',
 		data: {
 			color: 'red',
 		},
@@ -30,7 +30,7 @@ it('Can set background color', () => {
 		backgroundColor: 'white',
 	};
 	const action: ActionSetBackground = {
-		type: 'SET_BACKGROUND',
+		type: 'SetBackground',
 		data: {
 			color: 'black',
 		},
@@ -48,7 +48,7 @@ it('Can switch foreground and background', () => {
 		backgroundColor: 'white',
 	};
 	const action: ActionSwapForegroundBackground = {
-		type: 'SWAP_FOREGROUND_BACKGROUND',
+		type: 'SwapForegroundBackground',
 	};
 	const result = rootReducer(state, action);
 	expect(result).toEqual({

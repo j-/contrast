@@ -1,46 +1,46 @@
 import { Action } from 'redux';
 
-export interface ActionSetForeground extends Action<'SET_FOREGROUND'> {
+export interface ActionSetForeground extends Action<'SetForeground'> {
 	data: {
 		color: string;
 	};
 }
 
 export const actionIsSetForeground = (action: Action): action is ActionSetForeground => (
-	action.type === 'SET_FOREGROUND'
+	action.type === 'SetForeground'
 );
 
 export const setForeground = (color: string): ActionSetForeground => ({
-	type: 'SET_FOREGROUND',
+	type: 'SetForeground',
 	data: {
 		color,
 	},
 });
 
-export interface ActionSetBackground extends Action<'SET_BACKGROUND'> {
+export interface ActionSetBackground extends Action<'SetBackground'> {
 	data: {
 		color: string;
 	};
 }
 
 export const actionIsSetBackground = (action: Action): action is ActionSetBackground => (
-	action.type === 'SET_BACKGROUND'
+	action.type === 'SetBackground'
 );
 
 export const setBackground = (color: string): ActionSetBackground => ({
-	type: 'SET_BACKGROUND',
+	type: 'SetBackground',
 	data: {
 		color,
 	},
 });
 
-export interface ActionSwapForegroundBackground extends Action<'SWAP_FOREGROUND_BACKGROUND'> {
+export interface ActionSwapForegroundBackground extends Action<'SwapForegroundBackground'> {
 }
 
 export const actionIsSwapForegroundBackground = (action: Action): action is ActionSwapForegroundBackground => (
-	action.type === 'SWAP_FOREGROUND_BACKGROUND'
+	action.type === 'SwapForegroundBackground'
 );
 
 export const swapForegroundBackground = (): ActionSwapForegroundBackground => ({
-	type: 'SWAP_FOREGROUND_BACKGROUND',
+	type: 'SwapForegroundBackground',
 });
