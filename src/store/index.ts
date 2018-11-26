@@ -14,7 +14,7 @@ export interface RootReducerState {
 	backgroundColor: string;
 }
 
-const DEFAULT_STATE = {
+const DEFAULT_STATE: RootReducerState = {
 	foregroundColor: 'black',
 	backgroundColor: 'white',
 };
