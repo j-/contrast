@@ -1,3 +1,5 @@
+import { InputColor } from './color';
+
 const canvas = document.createElement('canvas');
 canvas.width = 1;
 canvas.height = 1;
@@ -29,7 +31,7 @@ const getImageData = (ctx: CanvasRenderingContext2D) => (
  * @param color Color to parse
  * @param background Optional background color
  */
-export const parseColor = (color: string, background: string = 'transparent'): [number, number, number] | null => {
+export const parseColor = (color: string, background: string = 'transparent'): InputColor | null => {
 	if (!isColorValid(color)) {
 		return null;
 	}

@@ -1,3 +1,13 @@
+export interface InputColor extends Array<number> {
+	length: 3;
+	/** Red channel (0-1) */
+	0: number;
+	/** Green channel (0-1) */
+	1: number;
+	/** Blue channel (0-1) */
+	2: number;
+}
+
 /**
  * The relative brightness of any point in a colorspace, normalized to 0 for
  * darkest black and 1 for lightest white.
@@ -7,7 +17,7 @@
  * @returns Relative luminance (0-1)
  * @see https://www.w3.org/TR/WCAG20/#relativeluminancedef
  */
-export const calculateRelativeLuminance = ([r, g, b]: [number, number, number]) => (
+export const calculateRelativeLuminance = ([r, g, b]: InputColor) => (
 	0.2126 * (r <= 0.03928 ? r / 12.92 : ((r + 0.055) / 1.055) ** 2.4) +
 	0.7152 * (g <= 0.03928 ? g / 12.92 : ((g + 0.055) / 1.055) ** 2.4) +
 	0.0722 * (b <= 0.03928 ? b / 12.92 : ((b + 0.055) / 1.055) ** 2.4)
