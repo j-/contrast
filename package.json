@@ -10,6 +10,7 @@
     "@types/react-dom": "^15.5.1",
     "@types/react-redux": "^5.0.21",
     "bootstrap": "^4.1.3",
+    "gh-pages": "^2.0.1",
     "react": "^15.6.2",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.7",
@@ -22,6 +23,20 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
-  }
+    "eject": "react-scripts-ts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-/contrast.git"
+  },
+  "author": "Jamie Hoeks <j@skeoh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/j-/contrast/issues"
+  },
+  "homepage": "https://skeoh.com/contrast"
 }
