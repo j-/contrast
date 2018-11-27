@@ -1,6 +1,5 @@
 import * as React from 'react';
 import DefineColors from './DefineColors';
-import Preview from '../containers/Preview';
 import Contrast from '../containers/Contrast';
 import ResultsTable from './ResultsTable';
 
@@ -12,17 +11,13 @@ const App: React.StatelessComponent = () => (
 			<DefineColors />
 		</section>
 
-		<section className="mt-5 mb-5">
-			<Preview />
-		</section>
-
 		<section className="mt-5 mb-5 text-center">
 			<Contrast />
 		</section>
 
 		<section className="mt-5 mb-5">
 			<div className="d-flex justify-content-center">
-				<div style={{ maxWidth: '40em' }}>
+				<div style={{ maxWidth: '70em' }}>
 					<ResultsTable />
 				</div>
 			</div>
