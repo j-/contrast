@@ -1,4 +1,8 @@
 import * as React from 'react';
+import ResultMeetsAALarge from '../containers/ResultMeetsAALarge';
+import ResultMeetsAASmall from '../containers/ResultMeetsAASmall';
+import ResultMeetsAAALarge from '../containers/ResultMeetsAAALarge';
+import ResultMeetsAAASmall from '../containers/ResultMeetsAAASmall';
 
 const ResultsTable: React.StatelessComponent = () => (
 	<table className="ResultsTable table table-bordered">
@@ -13,22 +17,22 @@ const ResultsTable: React.StatelessComponent = () => (
 			<tr>
 				<th>AA for large text</th>
 				<td className="text-right">3:1</td>
-				<td className="table-success">Yes</td>
+				<ResultMeetsAALarge />
 			</tr>
 			<tr>
 				<th>AA for small text</th>
 				<td className="text-right">4.5:1</td>
-				<td className="table-success">Yes</td>
+				<ResultMeetsAASmall />
 			</tr>
 			<tr>
 				<th>AAA for large text</th>
 				<td className="text-right">4.5:1</td>
-				<td className="table-success">Yes</td>
+				<ResultMeetsAAALarge />
 			</tr>
 			<tr>
 				<th>AAA for small text</th>
 				<td className="text-right">7:1</td>
-				<td className="table-danger">No</td>
+				<ResultMeetsAAASmall />
 			</tr>
 		</tbody>
 	</table>
