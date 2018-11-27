@@ -1,7 +1,7 @@
 import * as React from 'react';
 import DefineColors from './DefineColors';
 import Contrast from '../containers/Contrast';
-import ResultsTable from './ResultsTable';
+import ResultsTable from '../containers/ResultsTable';
 
 const App: React.StatelessComponent = () => (
 	<div className="App container mt-5 mb-5">
